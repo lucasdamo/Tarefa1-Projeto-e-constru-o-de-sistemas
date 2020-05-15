@@ -86,9 +86,9 @@
 		    <property name="version" value="2.0"/>
 		    <property name="xpath">
 			    <value>
-				    <![CDATA[
-				    //ThrowStatement
-				    ]]>
+				<![CDATA[
+				//ThrowStatement[@FirstClassOrInterfaceTypeImage!="PrestoException"]
+				]]>
 			    </value>
 		    </property>
 	    </properties>
