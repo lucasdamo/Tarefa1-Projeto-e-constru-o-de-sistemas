@@ -22,7 +22,7 @@ class AnalyzeCommit():
 
     def _runPmdForAllCommitFiles(self, sE = "start", format="csv"):
         str_files = ",".join([os.path.join(self.repo_dir, x) for x in self.files])
-        cmd = f"{os.path.join(os.getcwd(), 'pmd-bin-6.22.0/bin/run.sh pmd')} -min 5 -l java -f csv -d {str_files} -R {os.path.join(os.getcwd(), 'rules.xml')} -b -no-cache > ./result/{sE}_{self.hash}.{format} 2>./benchmark/{sE}_{self.hash}.txt"
+        cmd = f"{os.path.join(os.getcwd(), 'pmd-bin-6.22.0/bin/run.sh pmd')} -min 5 -l java -f csv -d {str_files} -R {os.path.join(os.getcwd(), 'rules.xml')} -b -no-cache > ./result/{self.hash}_{sE}.{format} 2>./benchmark/{self.hash}_{sE}.txt"
         print(cmd)
         os.system(cmd)
     def _separateCsvRow(self, text):
@@ -48,10 +48,10 @@ class AnalyzeCommit():
         self._runPmdForAllCommitFiles(sE="end")
 
 
-list_commits = []
+list_commits = ["0ebc22050b6e93e2f1dd0d3e5fdc2dbe3c01333a","080a6a124ad5c96712797ab106494e50b3b40cad","34cea981c7fadfca67a752c0f09f78264aa03217","2ac73e10477b08a9f0a3b0d4f0e842ede86a1fda","35a8e4309d7fecfc61e1a651a53c2acffe38c747","e442f69509043d1135445f29a4a5d86f9bb64017","ffb68b88cd9a5346480798ce50167da8bf3cd1bc","abbac155b0ad4f25af4b1fafcaa9fd2df06b31ac","27c35db739b0146b2a5e96314d1165517a10a256","a79933e31de2b7115aa7140e027ca47007fbf2d2"]
 
 ac = AnalyzeCommit("/home/lucas/Documents/PrestoDB/presto")
 
 for commit in list_commits:
-    ac.setTargetCommit("307d1cb83c7b8f264414c7a4e8f254296ddcc0e3")
+    ac.setTargetCommit(commit)
     ac.analyzeCommit()

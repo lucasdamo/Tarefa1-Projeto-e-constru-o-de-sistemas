@@ -87,7 +87,7 @@
 		    <property name="xpath">
 			    <value>
 				<![CDATA[
-				//ThrowStatement[@FirstClassOrInterfaceTypeImage!="PrestoException"]
+				//ThrowStatement[@FirstClassOrInterfaceTypeImage!="Exception"]
 				]]>
 			    </value>
 		    </property>
