@@ -48,7 +48,7 @@ class AnalyzeCommit():
         self._runPmdForAllCommitFiles(sE="end")
 
 
-list_commits = ["307d1cb83c7b8f264414c7a4e8f254296ddcc0e3"]
+list_commits = ["0ebc22050b6e93e2f1dd0d3e5fdc2dbe3c01333a","080a6a124ad5c96712797ab106494e50b3b40cad","34cea981c7fadfca67a752c0f09f78264aa03217","2ac73e10477b08a9f0a3b0d4f0e842ede86a1fda","35a8e4309d7fecfc61e1a651a53c2acffe38c747","e442f69509043d1135445f29a4a5d86f9bb64017","ffb68b88cd9a5346480798ce50167da8bf3cd1bc","abbac155b0ad4f25af4b1fafcaa9fd2df06b31ac","27c35db739b0146b2a5e96314d1165517a10a256","a79933e31de2b7115aa7140e027ca47007fbf2d2"]
 
 ac = AnalyzeCommit("/home/lucas/Documents/PrestoDB/presto")
 
