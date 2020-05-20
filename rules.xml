@@ -10,22 +10,19 @@
         It contains the rules of the old (pre PMD 6.0.0) rulesets java-basic, java-empty, java-imports,
         java-unnecessary, java-unusedcode.
     </description>
-    
-    <rule ref="category/java/bestpractices.xml" >
-	<exclude name="JUnitTestContainsTooManyAsserts"/>
-    </rule>
 
-    <rule ref="category/java/codestyle.xml/AvoidDollarSigns" />	
-    <rule ref="category/java/codestyle.xml/AvoidProtectedFieldInFinalClass" />
-    <rule ref="category/java/codestyle.xml/AvoidUsingNativeCode" />
-    <rule ref="category/java/codestyle.xml/ClassNamingConventions" />
+    <rule ref="category/java/bestpractices.xml/AvoidUsingHardCodedIP" />
+    <rule ref="category/java/bestpractices.xml/CheckResultSet" />
+    <rule ref="category/java/bestpractices.xml/UnusedImports" />
+    <rule ref="category/java/bestpractices.xml/UnusedFormalParameter" />
+    <rule ref="category/java/bestpractices.xml/UnusedLocalVariable" />
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateField" />
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateMethod" />
+
     <rule ref="category/java/codestyle.xml/DontImportJavaLang" />
     <rule ref="category/java/codestyle.xml/DuplicateImports" />
     <rule ref="category/java/codestyle.xml/ExtendsObject" />
-    <rule ref="category/java/codestyle.xml/FieldDeclarationsShouldBeAtStartOfClass" />
-    <rule ref="category/java/codestyle.xml/FieldNamingConventions" />
     <rule ref="category/java/codestyle.xml/ForLoopShouldBeWhileLoop" />
-    <rule ref="category/java/codestyle.xml/IdenticalCatchBranches" />
     <rule ref="category/java/codestyle.xml/TooManyStaticImports" />
     <rule ref="category/java/codestyle.xml/UnnecessaryFullyQualifiedName" />
     <rule ref="category/java/codestyle.xml/UnnecessaryModifier" />
@@ -33,23 +30,16 @@
     <rule ref="category/java/codestyle.xml/UselessParentheses" />
     <rule ref="category/java/codestyle.xml/UselessQualifiedThis" />
 
-    <rule ref="category/java/design.xml/AvoidThrowingNewInstanceOfSameException" />
     <rule ref="category/java/design.xml/CollapsibleIfStatements" />
-    <rule ref="category/java/design.xml/GodClass" />
-    <rule ref="category/java/design.xml/SimplifyBooleanExpressions" />
-    <rule ref="category/java/design.xml/SimplifyConditional" />
     <rule ref="category/java/design.xml/UselessOverridingMethod" />
 
     <rule ref="category/java/errorprone.xml/AvoidBranchingStatementAsLastInLoop" />
     <rule ref="category/java/errorprone.xml/AvoidDecimalLiteralsInBigDecimalConstructor" />
     <rule ref="category/java/errorprone.xml/AvoidMultipleUnaryOperators" />
     <rule ref="category/java/errorprone.xml/AvoidUsingOctalValues" />
-    <rule ref="category/java/errorprone.xml/BadComparison" />
     <rule ref="category/java/errorprone.xml/BrokenNullCheck" />
     <rule ref="category/java/errorprone.xml/CheckSkipResult" />
     <rule ref="category/java/errorprone.xml/ClassCastExceptionWithToArray" />
-    <rule ref="category/java/errorprone.xml/DoNotExtendJavaLangThrowable" />
-    <rule ref="category/java/errorprone.xml/DoNotHardCodeSDCard" />
     <rule ref="category/java/errorprone.xml/DontUseFloatTypeForLoopIndices" />
     <rule ref="category/java/errorprone.xml/EmptyCatchBlock" />
     <rule ref="category/java/errorprone.xml/EmptyFinallyBlock" />
@@ -61,7 +51,6 @@
     <rule ref="category/java/errorprone.xml/EmptySynchronizedBlock" />
     <rule ref="category/java/errorprone.xml/EmptyTryBlock" />
     <rule ref="category/java/errorprone.xml/EmptyWhileStmt" />
-    <rule ref="category/java/errorprone.xml/EqualsNull" />
     <rule ref="category/java/errorprone.xml/ImportFromSamePackage" />
     <rule ref="category/java/errorprone.xml/JumbledIncrementer" />
     <rule ref="category/java/errorprone.xml/MisplacedNullCheck" />
@@ -81,7 +70,7 @@
 
     <!-- Presto code style rules -->
     <rule ref="category/java/design.xml/SimplifiedTernary" />
-    <rule ref="category/java/design.xml/AvoidThrowingRawExceptionTypes" />
+    
     <rule name="UncategorizedException"
       language="java"
       message="Exception not categorized by PrestoException function call"
@@ -98,7 +87,7 @@
 		    <property name="xpath">
 			    <value>
 				<![CDATA[
-				//ThrowStatement[@FirstClassOrInterfaceTypeImage=="Exception"]
+				//ThrowStatement[@FirstClassOrInterfaceTypeImage!="Exception"]
 				]]>
 			    </value>
 		    </property>
